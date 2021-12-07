@@ -1,0 +1,7 @@
+select * from [DESKTOP-NNRODTU].[YLDB_Source].[dbo].[ODS_Fact_201201Incomedtl];
+select * from [DESKTOP-NNRODTU].[YLDB_Source].[dbo].[ODS_Fact_201201Incomedtl] with (nolock);
+select CONVERT(varchar(8),Date,112) from [DESKTOP-NNRODTU].[YLDB_Source].[dbo].[ODS_Fact_201201Incomedtl] with (nolock);
+select * from [DESKTOP-NNRODTU].[YLDB_Source].[dbo].[ODS_Dim_SignType] with (nolock);
+select top 1000000 CONVERT(varchar(8),Date,112) as 日期,b.SignName as 费用分类,a.Amount as 数量,a.Money as 费用 from [YLDB_Source].[dbo].[ODS_Fact_201201Incomedtl]  as a with (nolock) left join [DESKTOP-NNRODTU].[YLDB_Source].[dbo].[ODS_Dim_SignType] as b with (nolock) on a.Sign=b.SignId;
+select top 1000000 CONVERT(varchar(8),Date,112) as 日期,b.SignName as 费用分类,a.Amount as 数量,a.Money as 金额 from [YLDB_Source].[dbo].[ODS_Fact_201201Incomedtl]  as a with (nolock) left join [DESKTOP-NNRODTU].[YLDB_Source].[dbo].[ODS_Dim_SignType] as b with (nolock) on a.Sign=b.SignId;
+select top 500000 CONVERT(varchar(8),Date,112) as 日期,b.SignName as 费用分类,a.Amount as 数量,a.Money as 金额 from [YLDB_Source].[dbo].[ODS_Fact_201201Incomedtl]  as a with (nolock) left join [DESKTOP-NNRODTU].[YLDB_Source].[dbo].[ODS_Dim_SignType] as b with (nolock) on a.Sign=b.SignId;
